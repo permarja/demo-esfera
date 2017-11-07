@@ -22,7 +22,7 @@ public class EdgeConfiguration implements IBrowserObject {
 
 
 	@Override
-	public RemoteWebDriver CreateWebDriverAndStartBrowser(String seleniumServer) throws IOException, Exception {
+	public RemoteWebDriver createWebDriverAndStartBrowser(String seleniumServer) throws IOException, Exception {
 		remoteWebDriver = new RemoteWebDriver(new URL(seleniumServer), capabilities);
 		return remoteWebDriver;
 	}

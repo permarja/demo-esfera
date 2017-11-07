@@ -32,13 +32,11 @@ public class ChromeConfiguration implements IBrowserObject {
 		Map<String, Object> preferences = new Hashtable<>();
 		options.setExperimentalOption("prefs", preferences);
 		preferences.put("plugins.plugins_disabled", new String[] { "Chrome PDF Viewer" });
-		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-		
-		
+		capabilities.setCapability(ChromeOptions.CAPABILITY, options);	
 	}
 
 	@Override
-	public RemoteWebDriver CreateWebDriverAndStartBrowser(String seleniumServer) throws IOException, Exception {
+	public RemoteWebDriver createWebDriverAndStartBrowser(String seleniumServer) throws IOException, Exception {
 		remoteWebDriver = new RemoteWebDriver(new URL(seleniumServer), capabilities);
 		return remoteWebDriver;
 	}

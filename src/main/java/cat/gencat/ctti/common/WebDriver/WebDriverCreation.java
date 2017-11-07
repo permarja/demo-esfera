@@ -7,7 +7,7 @@ import cat.gencat.ctti.common.WebDriver.IBrowserObject;
 
 public class WebDriverCreation {
 
-	public  RemoteWebDriver CreateWebDriver(String browser, String seleniumServer) throws Exception {
+	public RemoteWebDriver createWebDriver(String browser, String seleniumServer) throws Exception {
 		IBrowserObject browserObject = null;
 		
 		switch (browser) {
@@ -36,6 +36,6 @@ public class WebDriverCreation {
 		}
 
 
-		return browserObject.CreateWebDriverAndStartBrowser(seleniumServer);
+		return browserObject.createWebDriverAndStartBrowser(seleniumServer);
 	}
 }
