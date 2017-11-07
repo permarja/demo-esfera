@@ -79,12 +79,12 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 				container(name: 'maven') {
 					//TODO: Not sure of the real nature of smoke tests
 					stage ('Smoke Test INT') {
-					 	sh "mvn verify -Dmaven.test.failure.ignore -PsmokeTest,int -Dserver.url=http://bookstore.dev.matxa.es"
+					 	sh "clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE,ACCEPTANCE"
 					    //TODO: Machaca los surefire-reports
-					    junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
+					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
 					}
 					stage('Acceptance Test INT') {
-					     sh "mvn verify -Dmaven.test.failure.ignore -PintegrationTest,int -Dserver.url=http://bookstore.dev.matxa.es" 
+					     sh "clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE,ACCEPTANCE" 
 					}
 					stage ('CESICAT: Anàlisi seguretat amb ZAP') {
                             try {
