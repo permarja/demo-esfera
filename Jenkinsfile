@@ -12,7 +12,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					stage("Build") {
 					    sh "mvn clean package -Dmaven.test.failure.ignore"
 					    //TODO: Change to publish html
-					    junit healthScaleFactor: 1.0, testResults: 'target/surefire-reports/TEST*.xml'	
+					    //junit healthScaleFactor: 1.0, testResults: 'target/surefire-reports/TEST*.xml'	
 					}
 			   
 					stage ('Anàlisi de codi estàtic') {
