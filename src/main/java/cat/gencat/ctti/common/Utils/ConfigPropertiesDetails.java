@@ -142,7 +142,7 @@ public class ConfigPropertiesDetails {
 		config.addConfiguration(new PropertiesConfiguration(getCONFIG_CONF_PATH()));
 		setENVIRONMENT(env);
 		WebDriverCreation wd = new WebDriverCreation();
-		driver = wd.CreateWebDriver(getBrowser(), this.getSeleniumServer());		
+		driver = wd.createWebDriver(getBrowser(), this.getSeleniumServer());		
 	}
 
 	public CompositeConfiguration GetCompositeConfiguration() {
