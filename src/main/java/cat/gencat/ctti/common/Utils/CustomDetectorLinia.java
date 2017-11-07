@@ -3,7 +3,6 @@ package cat.gencat.ctti.common.Utils;
 public class CustomDetectorLinia {
 	
 
-	
 	private int Index(String NOM_ARXIU) {
 		int index = 0;
 		for (int i = 0; i < Thread.currentThread().getStackTrace().length; i++) {

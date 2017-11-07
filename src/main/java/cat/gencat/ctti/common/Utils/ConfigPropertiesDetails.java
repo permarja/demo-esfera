@@ -92,7 +92,6 @@ public class ConfigPropertiesDetails {
 		return config.getProperty(ARCH).toString();
 	}*/
 	
-	
 
 	public static  String getEnvironment() {
 		//return config.getProperty(ENVIRONMENT).toString();
@@ -116,14 +115,13 @@ public class ConfigPropertiesDetails {
 	}
 	
 	// SETTERS
-
-	private static void setCONFIG_CONF_PATH(String cONFIG_CONF_PATH) {
-		CONFIG_CONF_PATH = cONFIG_CONF_PATH;
+	private static void setConfigPath(String confPath) {
+		CONFIG_CONF_PATH = confPath;
 	}
 
 
-	public void setENVIRONMENT(String eNVIRONMENT) {
-		ENVIRONMENT = eNVIRONMENT;
+	public void setENVIRONMENT(String env) {
+		ENVIRONMENT = env;
 	}
 
 	public ConfigPropertiesDetails(String env) throws Exception {
@@ -131,10 +129,10 @@ public class ConfigPropertiesDetails {
 		String OS = System.getProperty("os.name").toLowerCase();
         
         if(OS.indexOf("win") >= 0) {
-               setCONFIG_CONF_PATH(".\\src\\test\\resources\\config.properties");
+        	setConfigPath(".\\src\\test\\resources\\config.properties");
         }
         else if (OS.indexOf("nix") >= 0 || OS.indexOf("nux") >= 0 || OS.indexOf("aix") > 0) {
-               setCONFIG_CONF_PATH("./src/test/resources/config.properties");
+        	setConfigPath("./src/test/resources/config.properties");
         }
 
 		config = new CompositeConfiguration();

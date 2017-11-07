@@ -58,7 +58,7 @@ public class LogInEsferaTest {
 		conf = new ConfigPropertiesDetails(environment);
 		// Recuperem el navegador Web
 		driver = conf.getDriver();
-
+		//driver = new 
 		log.CapsaleraLog();
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " BEFORE METHOD ", Tipus.INFORMACIO);
