@@ -5,7 +5,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class DesconnexioPageObject extends WebAbstractaPageObject {
 
-	public static final String CAPÇALERA 					= "//*[@id=\"wrap\"]/div/header";
+	public static final String CAPSALERA 					= "//*[@id=\"wrap\"]/div/header";
 	public static final String LOGO_GENERALITAT				= "//*[@id=\"wrap\"]/div/header/div/nav/div[1]/div/a";
 	public static final String TEXT_AUTENTICACIO_USUARIS	= "//*[@id=\"nomPortal\"]/span";
 	public static final String CONTENIDOR_TEXTE				= "//*[@id=\"wrap\"]/div/section/article/div/div/div[2]";
@@ -17,7 +17,7 @@ public class DesconnexioPageObject extends WebAbstractaPageObject {
 	public static final String LOGO_GENERALITAT_PEU_PAGINA 	= "//*[@id=\"footer\"]/footer/div[2]/div/div";
 	
 	
-	public final String[] OBJECTES_INDISPENSABLES			= { 	CAPÇALERA,
+	public final String[] OBJECTES_INDISPENSABLES			= { 	CAPSALERA,
 																	LOGO_GENERALITAT,
 																	TEXT_AUTENTICACIO_USUARIS, 
 																	CONTENIDOR_TEXTE,

@@ -28,10 +28,10 @@ import cat.gencat.oqual.esfera.PageObjects.*;
 
 public class LogOutEsferaTest {
 	
-	//Constant per detectar el fil d'execució
+	//Constant per detectar el fil d'execuciï¿½
 	private static final String NOM_ARXIU = "LogOutEsferaTest.java";
 
-	// Fem referència a objectes però no sense crear instancia.
+	// Fem referï¿½ncia a objectes perï¿½ no sense crear instancia.
 	private CustomLog 					log;
 	private RemoteWebDriver 			driver;
 //	private PasarelaAlm 				pasarela;
@@ -59,24 +59,24 @@ public class LogOutEsferaTest {
 		// Instanciem l'onjecte de clase "CustomDetectorLinia"
 		linia = new  CustomDetectorLinia();
 		
-		log.CapçaleraLog();
+		log.CapsaleraLog();
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " BEFORE METHOD ", Tipus.INFORMACIO);
 		// Instanciem l'objecte Esf de clase "IdentificacioEsfera"
 
 		// Instanciem l'objecte Esf de clase "PissarraEsfera"
 		Esf3 = new EscollirCentrePageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la página escollir centre d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pï¿½gina escollir centre d'Esfera", Tipus.INFORMACIO);
 
 
 		// Instanciem l'objecte Esf de clase "DesconnexioEsfera"
 		Esf6 = new DesconnexioPageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la página logout d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pï¿½gina logout d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem L'objecte de clase "CustomAssert" i li afegim l'bjecte de classe
 		// PasarelaAlm.
 		// Assert = new CustomAssert(Pasarela,log);
-		// Obrim la direcció web d'Esfera a testejar
+		// Obrim la direcciï¿½ web d'Esfera a testejar
 		
 	/*	Esf3.AbrirPagina(ConfigPropertiesDetails.getTestUrl());
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " S'ha obert el navegador",	Tipus.INFORMACIO);*/
@@ -92,10 +92,10 @@ public class LogOutEsferaTest {
 		
 
 		//###################################################################
-		//						PÁGINA DE BUSCAR CENTRE
+		//						Pï¿½GINA DE BUSCAR CENTRE
 		//###################################################################
 		
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Comprovant objectes carregats de la página escollir centre.", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Comprovant objectes carregats de la pï¿½gina escollir centre.", Tipus.INFORMACIO);
 		resultat = Esf3.ElementoCargado(5, 1000, Esf3.OBJECTES_INDISPENSABLES);
 		if (! resultat.equals("OK") ) {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -126,11 +126,11 @@ public class LogOutEsferaTest {
 			Esf3.Espera(15);
 
 		//###################################################################
-		//						PÁGINA DESCONNEXIO
+		//						Pï¿½GINA DESCONNEXIO
 		//###################################################################
 		
 			//PAGINA DESCONNEXIO ESFERA
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU)," Carregant objectes del la página de desconexió.", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU)," Carregant objectes del la pï¿½gina de desconexiï¿½.", Tipus.INFORMACIO);
 			resultat = Esf6.ElementoCargado(5, 1000, Esf6.OBJECTES_INDISPENSABLES);
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -141,7 +141,7 @@ public class LogOutEsferaTest {
 			
 			//COMPROVAR RESULTATS DE LA DESCONNEXIO
 			resultat = Esf6.QuehiDiuEnDesconnexio();
-			if (! resultat.equals("Desconnexió realitzada amb èxit") ) {
+			if (! resultat.equals("Desconnexiï¿½ realitzada amb ï¿½xit") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
 				Assert.fail(resultat);
 			}
@@ -159,7 +159,7 @@ public class LogOutEsferaTest {
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " AFTER METHOD", Tipus.INFORMACIO);
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Iniciant pasarel·la",	Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Iniciant pasarelï¿½la",	Tipus.INFORMACIO);
 
 	/*	pasarela = new PasarelaAlm();
 		pasarela.setUrlAlm(ConfigPropertiesDetails.getUrlAlm());
@@ -195,7 +195,7 @@ public class LogOutEsferaTest {
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Netejant objectes", Tipus.INFORMACIO);
 		Esf3 	= null;
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Tancant connexió amb el navegador", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Tancant connexiï¿½ amb el navegador", Tipus.INFORMACIO);
 		Esf6.CerrarSeguro();
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Tancament correcte", Tipus.INFORMACIO);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Fi del reporting", Tipus.INFORMACIO);

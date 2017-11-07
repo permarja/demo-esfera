@@ -26,10 +26,10 @@ import cat.gencat.oqual.esfera.PageObjects.IdentificacioPageObject;
 
 public class SondaEsferaGrupsTest {
 
-	//Constant per detectar el fil d'execució
+	//Constant per detectar el fil d'execuciï¿½
 	private static final String NOM_ARXIU = "SondaEsferaGrupsTest.java";
 
-	// Fem referència a objectes però no sense crear instancia.
+	// Fem referï¿½ncia a objectes perï¿½ no sense crear instancia.
 	private CustomLog 					log;
 	private RemoteWebDriver 			driver;
 //	private PasarelaAlm 				pasarela;
@@ -61,36 +61,36 @@ public class SondaEsferaGrupsTest {
 		// Recuperem el navegador Web
 		driver = conf.GetDriver();
 
-		log.CapçaleraLog();
+		log.CapsaleraLog();
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " BEFORE METHOD ", Tipus.INFORMACIO);
 		// Instanciem l'objecte Esf de clase "IdentificacioEsfera"
 		Esf = new IdentificacioPageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la página login d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pï¿½gina login d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem l'objecte Esf de clase "EscolliuCentreEsfera"
 		// Esf2 = new EsferaPaginaAvisLegal(driver);
 
 		// Instanciem l'objecte Esf de clase "PissarraEsfera"
 		Esf3 = new EscollirCentrePageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la página escollir centre d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pï¿½gina escollir centre d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem l'objecte Esf de clase "PissarraEsfera"
 		Esf4 = new CentrePageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la página centre d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pï¿½gina centre d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem l'objecte Esf de clase "PaginaGestioEconomicaEsfera"
 		Esf5 = new GrupsAsignatsPageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la página gestió econòmica d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pï¿½gina gestiï¿½ econï¿½mica d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem l'objecte Esf de clase "DesconnexioEsfera"
 		Esf6 = new DesconnexioPageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la página logout d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pï¿½gina logout d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem L'objecte de clase "CustomAssert" i li afegim l'bjecte de classe
 		// PasarelaAlm.
 		// Assert = new CustomAssert(Pasarela,log);
-		// Obrim la direcció web d'Esfera a testejar
+		// Obrim la direcciï¿½ web d'Esfera a testejar
 		Esf.AbrirPagina(ConfigPropertiesDetails.getTestUrl());
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " S'ha obert el navegador",	Tipus.INFORMACIO);
 		// Esf.
@@ -108,16 +108,16 @@ public class SondaEsferaGrupsTest {
 		String resultat;
 		
 		//###################################################################
-		//							PÁGINA DE LOGIN
+		//							Pï¿½GINA DE LOGIN
 		//###################################################################
 		
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "CARREGAR PÀGINA", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "CARREGAR Pï¿½GINA", Tipus.INFORMACIO);
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		
-		// Comprovem que els elements imprescindibles s'han carregat. Farem 5 iteracións
-		// amb 1s entre iteració.
-		// Si hi ha algun error la prova terminarà
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de la página de login", Tipus.INFORMACIO);
+		// Comprovem que els elements imprescindibles s'han carregat. Farem 5 iteraciï¿½ns
+		// amb 1s entre iteraciï¿½.
+		// Si hi ha algun error la prova terminarï¿½
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de la pï¿½gina de login", Tipus.INFORMACIO);
 		resultat =  Esf.ElementoCargado(5, 1000, Esf.OBJECTES_INDISPENSABLES);
 		if (! resultat.equals("OK") ) {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL); //KO
@@ -128,7 +128,7 @@ public class SondaEsferaGrupsTest {
 		
 			//INTRODUIR USUARI
 			
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Introduïnt usuari", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Introduï¿½nt usuari", Tipus.INFORMACIO);
 			resultat = Esf.IntroduirUsuari(ConfigPropertiesDetails.getEsferaUser());
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL); //KO
@@ -138,7 +138,7 @@ public class SondaEsferaGrupsTest {
 			Esf.Espera(1);
 		
 			//INTRODUIR CONTRASENYA
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Introduïnt contrasenya", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Introduï¿½nt contrasenya", Tipus.INFORMACIO);
 			resultat = Esf.IntroduirContrasenya(ConfigPropertiesDetails.getEsferaPass());
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -147,8 +147,8 @@ public class SondaEsferaGrupsTest {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.INFORMACIO);
 			Esf.Espera(1);
 			
-			//PREMER BOTÒ ACCEPTAR
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Prement botò aceptar", Tipus.INFORMACIO);
+			//PREMER BOTï¿½ ACCEPTAR
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Prement botï¿½ aceptar", Tipus.INFORMACIO);
 			resultat = Esf.ClickBotoAcceptar();
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -158,10 +158,10 @@ public class SondaEsferaGrupsTest {
 			Esf.Espera(10);
 
 		//###################################################################
-		//						PÁGINA DE BUSCAR CENTRE
+		//						Pï¿½GINA DE BUSCAR CENTRE
 		//###################################################################
 		
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Carregant objectes de la página escollir centre.", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Carregant objectes de la pï¿½gina escollir centre.", Tipus.INFORMACIO);
 		resultat = Esf3.ElementoCargado(5, 1000, Esf3.OBJECTES_INDISPENSABLES);
 		if (! resultat.equals("OK") ) {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -171,7 +171,7 @@ public class SondaEsferaGrupsTest {
 		Esf3.Espera(1);
 
 			//INTRODUIR CENTRE 
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Introduïnt codi centre", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "Introduï¿½nt codi centre", Tipus.INFORMACIO);
 			resultat = Esf3.EscriureCodi("08016380");
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -192,7 +192,7 @@ public class SondaEsferaGrupsTest {
 			Esf3.Espera(1);
 			
 			//PREMER RESULTATS
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),"Premem el botó del resultat" ,Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),"Premem el botï¿½ del resultat" ,Tipus.INFORMACIO);
 			Esf3.Espera(1);
 			resultat = Esf3.ClickBotoLiniaUnicResultat();
 			if (! resultat.equals("OK") ) {
@@ -202,7 +202,7 @@ public class SondaEsferaGrupsTest {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.INFORMACIO);
 			Esf3.Espera(10);
 		
-			//PÁGINA CENTRE
+			//Pï¿½GINA CENTRE
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Carregant objectes del Dashboard del centre.", Tipus.INFORMACIO);
 			resultat = Esf4.ElementoCargado(5, 1000, Esf4.OBJECTES_INDISPENSABLES);
 			if (! resultat.equals("OK") ) {
@@ -213,7 +213,7 @@ public class SondaEsferaGrupsTest {
 			Esf4.Espera(1);
 
 			//BOTO GRUPS
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Prement botó \"Grups\".", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Prement botï¿½ \"Grups\".", Tipus.INFORMACIO);
 			resultat = Esf4.ClickBotoGrups();
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -223,7 +223,7 @@ public class SondaEsferaGrupsTest {
 			Esf4.Espera(1);
 			
 			//BOTO GRUPS - Sub GRUPS ASIGNATS
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Prement botó \"Grups Asignats\".", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Prement botï¿½ \"Grups Asignats\".", Tipus.INFORMACIO);
 			resultat = Esf4.ClickBotoGrupsSubGrupsAssignats();
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -235,7 +235,7 @@ public class SondaEsferaGrupsTest {
 		
 		
 		//###################################################################
-		//						PÁGINA GRUPS ASSIGNATS
+		//						Pï¿½GINA GRUPS ASSIGNATS
 		//###################################################################
 		
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de \"Grups asignats\".", Tipus.INFORMACIO);
@@ -268,7 +268,7 @@ public class SondaEsferaGrupsTest {
 			Esf5.Espera(15);
 		
 			//PAGINA DESCONNEXIO ESFERA
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU)," Carregant objectes del la página de desconexió.", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU)," Carregant objectes del la pï¿½gina de desconexiï¿½.", Tipus.INFORMACIO);
 			resultat = Esf6.ElementoCargado(5, 1000, Esf6.OBJECTES_INDISPENSABLES);
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -279,7 +279,7 @@ public class SondaEsferaGrupsTest {
 
 			//COMPROVAR RESULTATS DE LA DESCONNEXIO
 			resultat = Esf6.QuehiDiuEnDesconnexio();
-			if (! resultat.equals("Desconnexió realitzada amb èxit") ) {
+			if (! resultat.equals("Desconnexiï¿½ realitzada amb ï¿½xit") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
 				Assert.fail(resultat);
 			}
@@ -301,7 +301,7 @@ public class SondaEsferaGrupsTest {
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " AFTER METHOD", Tipus.INFORMACIO);
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Iniciant pasarel·la",	Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Iniciant pasarelï¿½la",	Tipus.INFORMACIO);
 
 	/*	pasarela = new PasarelaAlm();
 		pasarela.setUrlAlm(ConfigPropertiesDetails.getUrlAlm());
@@ -352,7 +352,7 @@ public class SondaEsferaGrupsTest {
 		Esf3 	= null;
 		Esf4 	= null;
 		Esf5 	= null;
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Tancant connexió amb el navegador", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Tancant connexiï¿½ amb el navegador", Tipus.INFORMACIO);
 		Esf6.CerrarSeguro();
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Tancament correcte", Tipus.INFORMACIO);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Fi del reporting", Tipus.INFORMACIO);

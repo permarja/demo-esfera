@@ -8,10 +8,10 @@ public class IdentificacioPageObject extends WebAbstractaPageObject {
 
 	// DEFINICIO OBJECTES DE LA PANTALLA DE LOGIN
 
-	public final String FONS_CAPÇALERA 											= "//*[@id=\"banner\"]";
-	public final String FONS_CAPÇALERA_PETIT 									= "//*[@id=\"navlist\"]";
+	public final String FONS_CAPSALERA 											= "//*[@id=\"banner\"]";
+	public final String FONS_CAPSALERA_PETIT 									= "//*[@id=\"navlist\"]";
 	public final String LOGOTIP_GENERALITAT 									= "//*[@id=\"active\"]/img";
-	public final String IMATGE_ENLLAÇ_ENSENYAMENT 								= "//*[@id=\"navlist\"]/li[2]/a/img";
+	public final String IMATGE_ENLLAS_ENSENYAMENT 								= "//*[@id=\"navlist\"]/li[2]/a/img";
 	public final String TITOL_IDENTIFICACIO_ENTORN 								= "//*[@id=\"content\"]/p[1]/font/strong";
 	public final String TITOL_ACCES_USUARI 										= "//*[@id=\"content\"]/p[2]";
 	public final String CONTENIDOR_IDENTIFICACIO 								= "//*[@id=\"container\"]";
@@ -32,7 +32,7 @@ public class IdentificacioPageObject extends WebAbstractaPageObject {
 	public final String BOTO_ACCEDEIX 											= "//*[@id=\"submit\"]/a";
 	public final String CONTENIDOR_INFO_ACCES_USUARI_CORPORATIU 				= "//*[@id=\"capsa1\"]";
 	public final String CONTENIDOR_INFO_ACCES_CERTIFICAT_DIGITAL 				= "//*[@id=\"capsa1\"]";
-	public final String TEXT_ENLLAÇ_ENSENYAMENT 								= "//*[@id=\"capsa1\"]/a";
+	public final String TEXT_ENLLAS_ENSENYAMENT 								= "//*[@id=\"capsa1\"]/a";
 	public final String FONS_PEU 												= "//*[@id=\"footer\"]/ul";
 	public final String CERTIFICACIO_GENERALITAT 								= "//*[@id=\"footer\"]/ul/li";
 	
@@ -138,36 +138,36 @@ public class IdentificacioPageObject extends WebAbstractaPageObject {
 		return "OK";
 	}
 
-	public String ClickTextEllaçSau() {
+	public String ClickTextEllasSau() {
 		try {
-		driver.findElement(By.xpath(TEXT_ENLLAÇ_ENSENYAMENT)).click();
+		driver.findElement(By.xpath(TEXT_ENLLAS_ENSENYAMENT)).click();
 		} catch (Exception e) {
 			return e.getMessage();
 		}
 		return "OK";
 	}
 
-	public String IntroTextEllaçSau() {
+	public String IntroTextEllasSau() {
 		try {
-		driver.findElement(By.xpath(TEXT_ENLLAÇ_ENSENYAMENT)).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(TEXT_ENLLAS_ENSENYAMENT)).sendKeys(Keys.ENTER);
 		} catch (Exception e) {
 			return e.getMessage();
 		}
 		return "OK";
 	}
 
-	public String ClickCapçaleraGeneralitat() {
+	public String ClickCapsaleraGeneralitat() {
 		try {
-		driver.findElement(By.xpath(TEXT_ENLLAÇ_ENSENYAMENT)).click();
+		driver.findElement(By.xpath(TEXT_ENLLAS_ENSENYAMENT)).click();
 		} catch (Exception e) {
 			return e.getMessage();
 		}
 		return "OK";
 	}
 
-	public String IntroClickCapçaleraGeneralitat() {
+	public String IntroClickCapsaleraGeneralitat() {
 		try {
-		driver.findElement(By.xpath(TEXT_ENLLAÇ_ENSENYAMENT)).sendKeys(Keys.ENTER);
+		driver.findElement(By.xpath(TEXT_ENLLAS_ENSENYAMENT)).sendKeys(Keys.ENTER);
 		} catch (Exception e) {
 			return e.getMessage();
 		}

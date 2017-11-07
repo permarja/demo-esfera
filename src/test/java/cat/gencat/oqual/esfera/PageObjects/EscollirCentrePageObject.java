@@ -6,14 +6,14 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class EscollirCentrePageObject extends WebAbstractaPageObject {
 
-	public  final String CAPÇALERA_ESCOLLIU_CENTRE 		= "//*[@id=\"modalCentres\"]/div[2]/div/div[1]";
+	public  final String CAPSALERA_ESCOLLIU_CENTRE 		= "//*[@id=\"modalCentres\"]/div[2]/div/div[1]";
 	public  final String CONTENIDOR_ESCOLLIU_CENTRE		= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]";
 	public  final String BLOC_ESCOLLIU_CENTRE 			= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div";
 	public  final String TEXT_ESCOLLIU_CENTRE 			= "//*[@id=\"modalCentres\"]/div[2]/div/div[1]/h4";
 	public  final String TEXT_RESULTATS					= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/p";
-	public  final String CAPÇALERA_COXINET 				= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[1]/th[1]";
-	public  final String CAPÇALERA_CODI					= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[1]/th[2]";
-	public  final String CAPÇALERA_NOM 					= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[1]/th[3]";
+	public  final String CAPSALERA_COXINET 				= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[1]/th[1]";
+	public  final String CAPSALERA_CODI					= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[1]/th[2]";
+	public  final String CAPSALERA_NOM 					= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[1]/th[3]";
 	public  final String BLOC_PETIT						= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[2]/th[1]";
 	public  final String BLOC_CODI 						= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[2]/th[2]";
 	public  final String BLOC_NOM 						= "//*[@id=\"modalCentres\"]/div[2]/div/div[2]/div/fieldset/div/table/thead/tr[2]/th[3]";
@@ -78,14 +78,14 @@ public class EscollirCentrePageObject extends WebAbstractaPageObject {
 	public final String BOTO_DESCONEXIO 				= "//*[@id=\"logoutIcon\"]/i";
 	
 	
-	public final String[] OBJECTES_INDISPENSABLES 				= {	CAPÇALERA_ESCOLLIU_CENTRE,
+	public final String[] OBJECTES_INDISPENSABLES 				= {	CAPSALERA_ESCOLLIU_CENTRE,
 																	CONTENIDOR_ESCOLLIU_CENTRE,
 																	BLOC_ESCOLLIU_CENTRE,
 																	TEXT_ESCOLLIU_CENTRE,
 																	TEXT_RESULTATS,
-																	CAPÇALERA_COXINET,
-																	CAPÇALERA_CODI,
-																	CAPÇALERA_NOM,
+																	CAPSALERA_COXINET,
+																	CAPSALERA_CODI,
+																	CAPSALERA_NOM,
 																	BLOC_PETIT,
 																	BLOC_CODI,
 																	BLOC_NOM,

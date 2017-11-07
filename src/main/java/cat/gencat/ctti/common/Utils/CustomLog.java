@@ -42,7 +42,7 @@ public class CustomLog {
 
 	}
 
-	public void CapçaleraLog() {
+	public void CapsaleraLog() {
 
 		ImprimeixSenseData("################################################################################",
 				Tipus.INFORMACIO);
