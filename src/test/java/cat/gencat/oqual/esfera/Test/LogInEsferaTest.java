@@ -1,6 +1,5 @@
 package cat.gencat.oqual.esfera.Test; 
 
-//import com.EsferaPageObjects.java.EsferaPaginaAvisLegal;
 
 import org.testng.annotations.Test;
 
@@ -24,7 +23,6 @@ import cat.gencat.ctti.common.Utils.CustomDetectorLinia;
 import cat.gencat.ctti.common.Utils.CustomLog;
 import cat.gencat.ctti.common.Utils.CustomLog.Tipus;
 import cat.gencat.oqual.esfera.PageObjects.*;
-
 
 
 public class LogInEsferaTest {
