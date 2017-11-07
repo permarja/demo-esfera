@@ -26,9 +26,6 @@ public class ConfigPropertiesDetails {
 	private static final String SUIT 			= "Suit";
 	private static final String SUIT_ID 		= "SuitID";
 
-
-	//
-	//private static final String ENVIRONMENT 	= "environment";
 	private static String ENVIRONMENT;
 
 	private static final String ESFERA_USER 	= "UsuariEsfera";
@@ -38,10 +35,7 @@ public class ConfigPropertiesDetails {
 	private static String CONFIG_CONF_PATH;
 	private static CompositeConfiguration config;
 	
-	// private WebDriverCreation creator;
 	protected static RemoteWebDriver driver;
-
-	//private static DesiredCapabilities capabilities;
 
 	// GETTERS
 
@@ -155,7 +149,7 @@ public class ConfigPropertiesDetails {
 		return config;
 	}
 
-	public RemoteWebDriver GetDriver() {
+	public RemoteWebDriver getDriver() {
 		return driver;
 	}
 

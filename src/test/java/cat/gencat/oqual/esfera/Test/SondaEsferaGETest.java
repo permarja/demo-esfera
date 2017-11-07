@@ -53,7 +53,7 @@ public class SondaEsferaGETest {
 		// Instanciem l'objecte de clase "ConfigPropertiesDetails"
 		conf = new ConfigPropertiesDetails(environment);
 		// Recuperem el navegador Web
-		driver = conf.GetDriver();
+		driver = conf.getDriver();
 
 		log.CapsaleraLog();
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);

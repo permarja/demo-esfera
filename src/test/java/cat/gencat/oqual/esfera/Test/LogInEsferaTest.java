@@ -27,10 +27,10 @@ import cat.gencat.oqual.esfera.PageObjects.*;
 
 public class LogInEsferaTest {
 	
-	//Constant per detectar el fil d'execuci�
+	//Constant per detectar el fil d'execucio
 	private static final String NOM_ARXIU = "LogInEsferaTest.java";
 
-	// Fem refer�ncia a objectes per� no sense crear instancia.
+	// Fem referencia a objectes pero no sense crear instancia.
 	private CustomLog 					log;
 	private RemoteWebDriver 			driver;
 	//private PasarelaAlm 				pasarela;
@@ -57,7 +57,7 @@ public class LogInEsferaTest {
 		// Instanciem l'objecte de clase "ConfigPropertiesDetails"
 		conf = new ConfigPropertiesDetails(environment);
 		// Recuperem el navegador Web
-		driver = conf.GetDriver();
+		driver = conf.getDriver();
 
 		log.CapsaleraLog();
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
@@ -73,7 +73,7 @@ public class LogInEsferaTest {
 		Esf3 = new EscollirCentrePageObject(driver);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la p�gina escollir centre d'Esfera", Tipus.INFORMACIO);
 
-		// Obrim la direcci� web d'Esfera a testejar
+		// Obrim la direccio web d'Esfera a testejar
 		
 		Esf.AbrirPagina(ConfigPropertiesDetails.getTestUrl());
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " S'ha obert el navegador",	Tipus.INFORMACIO);
@@ -97,9 +97,9 @@ public class LogInEsferaTest {
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), "LogIn", Tipus.INFORMACIO);
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		
-		// Comprovem que els elements imprescindibles s'han carregat. Farem 5 iteraci�ns
-		// amb 1s entre iteraci�.
-		// Si hi ha algun error la prova terminar�
+		// Comprovem que els elements imprescindibles s'han carregat. Farem 5 iteracions
+		// amb 1s entre iteracio.
+		// Si hi ha algun error la prova terminara
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de la p�gina de login", Tipus.INFORMACIO);
 		resultat =  Esf.ElementoCargado(5, 1000, Esf.OBJECTES_INDISPENSABLES);
 		if (! resultat.equals("OK") ) {
@@ -131,7 +131,7 @@ public class LogInEsferaTest {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.INFORMACIO);
 			Esf.Espera(1);
 			
-			//PREMER BOT� ACCEPTAR
+			//PREMER BOTO ACCEPTAR
 			
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Prement bot� aceptar", Tipus.INFORMACIO);
 			resultat = Esf.ClickBotoAcceptar();

@@ -20,7 +20,7 @@ public class ChromeConfiguration implements IBrowserObject {
 	RemoteWebDriver remoteWebDriver;
 	private static DesiredCapabilities capabilities;
 
-	public  ChromeConfiguration() throws IOException, ConfigurationException {
+	public ChromeConfiguration() throws IOException, ConfigurationException {
 	
 		capabilities = DesiredCapabilities.chrome();
 		// ... but only if it supports javascript
