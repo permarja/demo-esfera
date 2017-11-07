@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Esfera suite">
+
+
+  <test verbose="2" name="LogInLogOut test">
+    <classes>
+      <class name="cat.gencat.oqual.esfera.Test.LogInEsferaTest"/>
+      <class name="cat.gencat.oqual.esfera.Test.LogOutEsferaTest"/> 
+    </classes>
+  </test> <!-- Default test -->
+
+
+  <test verbose="2" name="Esfera test">
+    <classes>
+      <class name="cat.gencat.oqual.esfera.Test.SondaEsferaGETest"/>
+      <class name="cat.gencat.oqual.esfera.Test.SondaEsferaGrupsTest"/>
+    </classes>
+  </test>
+
+  
+   <!-- Default test -->
+</suite> <!-- Default suite -->
+
+
+
