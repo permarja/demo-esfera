@@ -26,28 +26,11 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 							timeout(time: 5, unit: 'MINUTES') { 
 								def qG = waitForQualityGate()
 								if(qG.status == 'OK')
-								  echo "SONAR: Codi acompleix els mínims de qualitat. Enhorabona!"
+								  	echo "SONAR: Codi acompleix els mínims de qualitat. Enhorabona!"
 								else
 									error "SONAR: Codi no acompleix els mínims de qualitat : ${qG.status}"
 						   }
 						}		
-			
-					  /*stage("CESICAT: Anàlisi seguretat dependency check") {
-	                   try {
-	                            sh "mvn verify -Powasp-dependencycheck,dev"
-	                        }
-	                        finally {
-	                            publishHTML(target: [
-	                                    reportDir            : 'target',
-	                                    reportFiles          : 'dependency-check-report.html',
-	                                    reportName           : 'OWASP Dependency Check Informe',
-	                                    keepAll              : true,
-	                                    alwaysLinkToLastBuild: true,
-	                                   allowMissing         : false
-	                            ])
-							}
-
-					 }*/
 				} 
 				
 				container(name: 'maven') {
@@ -56,7 +39,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					stage ('Smoke Test PRE') {
 						echo "SmokePRE"
 					 	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
-						archive(includes:'target\\surefire-reports\\*.html')
+						archive 'target\\*\\*.html'
 						echo "fi SmokePRE"
 					    //TODO: Machaca los surefire-reports
 					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
@@ -64,7 +47,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					stage('Acceptance Test PRE') {
 						echo "AcceptancePRE"
 					    	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
-						archive(includes:'target\\surefire-reports\\*.html')
+						archive 'target\\*\\*.html'
 					    	echo "fi AcceptancePRE"
 					}
 					}
