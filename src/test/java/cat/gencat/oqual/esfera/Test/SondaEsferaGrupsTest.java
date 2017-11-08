@@ -279,7 +279,7 @@ public class SondaEsferaGrupsTest {
 
 			//COMPROVAR RESULTATS DE LA DESCONNEXIO
 			resultat = Esf6.QuehiDiuEnDesconnexio();
-			if (! resultat.equals("Desconnexio realitzada amb \u00e8xit") ) {
+			if (! resultat.equals("Desconnexi\u00f3 realitzada amb \u00e8xit") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
 				Assert.fail(resultat);
 			}
