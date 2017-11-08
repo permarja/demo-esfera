@@ -68,9 +68,9 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					}
 					finally {
 					    publishHTML(target: [
-						    reportDir            : 'target',
+						    reportDir            : 'target\surefire-reports',
 						    reportFiles          : 'index.html',
-						    reportName           : 'OWASP Dependency Check Informe',
+						    reportName           : 'SeleniumReport',
 						    keepAll              : true,
 						    alwaysLinkToLastBuild: true,
 						    allowMissing         : false
