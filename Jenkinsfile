@@ -86,8 +86,9 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
 					}
 					stage('Acceptance Test INT') {
-					     sh "mvn verify -Denv.ENTORNO=PRE -Dgroups=SMOKE,ACCEPTANCE" 
-					     echo "fi SmokeAcceptanceInt"
+						echo "AcceptanceINT"
+					    sh "mvn verify -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
+					    echo "fi AcceptanceInt"
 					}
 				}
 				
