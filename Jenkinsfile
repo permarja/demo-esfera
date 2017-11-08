@@ -66,6 +66,16 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					    echo "fi AcceptancePRE"
 					}
 					}
+					finally {
+					    publishHTML(target: [
+						    reportDir            : 'target\surefire-reports',
+						    reportFiles          : 'index.html',
+						    reportName           : 'SeleniumReport',
+						    keepAll              : true,
+						    alwaysLinkToLastBuild: true,
+						    allowMissing         : false
+                            			])
+					}
 				
 				}
 	     }
