@@ -1,0 +1,106 @@
+apiVersion: v1
+items:
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: postgres
+    namespace: dev
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: postgres
+      spec:
+        containers:
+        - name: postgres
+          image: gencat.azurecr.io/postgres:9.5
+          imagePullPolicy: "Always"
+          ports:
+          - containerPort: 5432
+          env:
+          - name: POSTGRES_USER
+            value: demospringboot
+          - name: POSTGRES_PASSWORD
+            value: password
+          - name: PGDATA
+            value: /var/lib/postgresql/data/pgdata
+          volumeMounts:
+          - mountPath: /var/lib/postgresql/data
+            name: demo-canigo-postgres
+        imagePullSecrets:
+        - name: regsecret
+        volumes:
+        - name: demo-canigo-postgres
+          persistentVolumeClaim:
+            claimName: demo-canigo-pvc
+- apiVersion: extensions/v1beta1
+  kind: Deployment
+  metadata:
+    name: demo-canigo
+    namespace: dev
+  spec:
+    replicas: 1
+    template:
+      metadata:
+        labels:
+          app: demo-canigo
+      spec:
+        containers:
+        - name: demo-canigo
+          image: gencat.azurecr.io/demo-canigo:latest
+          imagePullPolicy: "Always"
+          ports:
+          - containerPort: 80
+        imagePullSecrets:
+        - name: regsecret
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: postgres
+    name: postgres
+    namespace: dev
+  spec:
+    ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432
+    selector:
+      app: postgres
+    type: ClusterIP
+- apiVersion: v1
+  kind: Service
+  metadata:
+    labels:
+      app: demo-canigo
+    name: demo-canigo
+    namespace: dev
+  spec:
+    ports:
+    - name: http
+      port: 80
+      protocol: TCP
+      targetPort: 8080
+    selector:
+      app: demo-canigo
+    type: ClusterIP
+- apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    generation: 1
+    name: demo-canigo
+    namespace: dev
+  spec:
+    rules:
+    - host: bookstore.dev.matxa.es
+      http:
+        paths:
+        - backend:
+            serviceName: demo-canigo
+            servicePort: 80
+kind: List
+metadata:
+  resourceVersion: ""
+  selfLink: ""
+
