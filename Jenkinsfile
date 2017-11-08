@@ -32,22 +32,22 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					   }
 					}		
 		
-				  stage("CESICAT: Anàlisi seguretat dependency check") {
-                   try {
-                            sh "mvn verify -Powasp-dependencycheck,dev"
-                        }
-                        finally {
-                            publishHTML(target: [
-                                    reportDir            : 'target',
-                                    reportFiles          : 'dependency-check-report.html',
-                                    reportName           : 'OWASP Dependency Check Informe',
-                                    keepAll              : true,
-                                    alwaysLinkToLastBuild: true,
-                                    allowMissing         : false
-                            ])
-						}
-
-				 }
+//				  stage("CESICAT: Anàlisi seguretat dependency check") {
+//                   try {
+//                            sh "mvn verify -Powasp-dependencycheck,dev"
+//                        }
+//                        finally {
+//                            publishHTML(target: [
+//                                    reportDir            : 'target',
+//                                    reportFiles          : 'dependency-check-report.html',
+//                                    reportName           : 'OWASP Dependency Check Informe',
+//                                    keepAll              : true,
+//                                    alwaysLinkToLastBuild: true,
+//                                   allowMissing         : false
+//                            ])
+//						}
+//
+//				 }
 			} 
 				
 				container(name: 'docker') {
