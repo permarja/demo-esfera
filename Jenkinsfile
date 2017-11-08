@@ -9,11 +9,11 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						checkout scm
 					}
 					
-					stage("Build") {
-					    sh "mvn clean package -Denv.ENTORNO=PRE -Dgroups=SMOKE -Dmaven.test.failure.ignore"
+					//stage("Build") {
+					//    sh "mvn clean package -Denv.ENTORNO=PRE -Dgroups=SMOKE -Dmaven.test.failure.ignore"
 					    //TODO: Change to publish html
 					    //junit healthScaleFactor: 1.0, testResults: 'target/surefire-reports/TEST*.xml'	
-					}
+					//}
 			   
 					stage ('Anàlisi de codi estàtic') {
 						withSonarQubeEnv("SonarQubeServer") {
