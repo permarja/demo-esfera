@@ -68,7 +68,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					}
 					finally {
 					    publishHTML(target: [
-						    reportDir            : 'target\surefire-reports',
+						    reportDir            : 'target\\surefire-reports',
 						    reportFiles          : 'index.html',
 						    reportName           : 'SeleniumReport',
 						    keepAll              : true,
