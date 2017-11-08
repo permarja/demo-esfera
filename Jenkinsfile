@@ -68,25 +68,26 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 				/*container(name: 'clients') {
 					stage ('Desplegament INT') {
 						deployProject{
-							stagedProject = 'demo-canigo:latest'
+							stagedProject = 'demo-ensenyament:latest'
 						    resourceLocation = 'src/assembly/kubernetes/kubernetes-dev.yaml'
 						    environment = 'dev'
 							registry = 'gencat.azurecr.io'
 						}
 					}
-				}*/ 
+				}*/
 
 				container(name: 'maven') {
 					//TODO: Not sure of the real nature of smoke tests
 					stage ('Smoke Test INT') {
 						echo "SmokeINT"
-					 	sh "clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
+					 	sh "mv clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
 						echo "fi SmokeInt"
 					    //TODO: Machaca los surefire-reports
 					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
 					}
 					stage('Acceptance Test INT') {
-					     sh "clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE,ACCEPTANCE" 
+					     sh "mv clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE,ACCEPTANCE" 
+					     echo "fi SmokeAcceptanceInt"
 					}
 				}
 				
