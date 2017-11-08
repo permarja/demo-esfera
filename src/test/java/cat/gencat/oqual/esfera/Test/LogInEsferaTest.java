@@ -64,14 +64,14 @@ public class LogInEsferaTest {
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " BEFORE METHOD ", Tipus.INFORMACIO);
 		// Instanciem l'objecte Esf de clase "IdentificacioEsfera"
 		Esf = new IdentificacioPageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la p�gina login d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la p\u00e0gina login d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem l'objecte Esf de clase "EscolliuCentreEsfera"
 		// Esf2 = new EsferaPaginaAvisLegal(driver);
 
 		// Instanciem l'objecte Esf de clase "PissarraEsfera"
 		Esf3 = new EscollirCentrePageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la p�gina escollir centre d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la p\u00e0gina escollir centre d'Esfera", Tipus.INFORMACIO);
 
 		// Obrim la direccio web d'Esfera a testejar
 		
@@ -100,7 +100,7 @@ public class LogInEsferaTest {
 		// Comprovem que els elements imprescindibles s'han carregat. Farem 5 iteracions
 		// amb 1s entre iteracio.
 		// Si hi ha algun error la prova terminara
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de la p�gina de login", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de la p\u00e0gina de login", Tipus.INFORMACIO);
 		resultat =  Esf.ElementoCargado(5, 1000, Esf.OBJECTES_INDISPENSABLES);
 		if (! resultat.equals("OK") ) {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL); //KO
@@ -111,7 +111,7 @@ public class LogInEsferaTest {
 		
 			//INTRODUIR USUARI
 			
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Introdu�nt usuari", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Introduint usuari", Tipus.INFORMACIO);
 			resultat = Esf.IntroduirUsuari(ConfigPropertiesDetails.getEsferaUser());
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL); //KO
@@ -122,7 +122,7 @@ public class LogInEsferaTest {
 		
 			//INTRODUIR CONTRASENYA
 			
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Introdu�nt contrasenya", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Introduint contrasenya", Tipus.INFORMACIO);
 			resultat = Esf.IntroduirContrasenya(ConfigPropertiesDetails.getEsferaPass());
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -133,7 +133,7 @@ public class LogInEsferaTest {
 			
 			//PREMER BOTO ACCEPTAR
 			
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Prement bot� aceptar", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Prement boto aceptar", Tipus.INFORMACIO);
 			resultat = Esf.ClickBotoAcceptar();
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -146,7 +146,7 @@ public class LogInEsferaTest {
 		//						P�GINA DE BUSCAR CENTRE
 		//###################################################################
 		
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Carregant objectes de la p�gina escollir centre.", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Carregant objectes de la p\u00e0gina escollir centre.", Tipus.INFORMACIO);
 		resultat = Esf3.ElementoCargado(5, 1000, Esf3.OBJECTES_INDISPENSABLES);
 		if (! resultat.equals("OK") ) {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -162,7 +162,7 @@ public class LogInEsferaTest {
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " AFTER METHOD", Tipus.INFORMACIO);
 		log.ImprimeixSenseData("", Tipus.INFORMACIO);
 		
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Iniciant pasarel�la",	Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Iniciant pasarella",	Tipus.INFORMACIO);
 
 	/*	pasarela = new PasarelaAlm();
 		pasarela.setUrlAlm(ConfigPropertiesDetails.getUrlAlm());
