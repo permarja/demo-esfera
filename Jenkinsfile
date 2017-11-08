@@ -62,9 +62,8 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					
 					post {
 						always {
-						    archive 'target/surefire-reports/*.*'
+						    archive 'target\\surefire-reports\\*.*'
 					}
-				
 				}
 	     }
 	 }
