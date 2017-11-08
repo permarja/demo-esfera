@@ -52,6 +52,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 				
 				container(name: 'maven') {
 					//TODO: Not sure of the real nature of smoke tests
+					try{
 					stage ('Smoke Test PRE') {
 						echo "SmokePRE"
 					 	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
@@ -64,6 +65,17 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					    sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
 					    echo "fi AcceptancePRE"
 					}
+					}
+					finally {
+					    publishHTML(target: [
+						    reportDir            : 'target',
+						    reportFiles          : 'index.html',
+						    reportName           : 'OWASP Dependency Check Informe',
+						    keepAll              : true,
+						    alwaysLinkToLastBuild: true,
+						    allowMissing         : false
+                            			])
+						}
 				}
 	     }
 	 }
