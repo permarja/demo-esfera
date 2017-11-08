@@ -81,7 +81,7 @@ public class SondaEsferaGrupsTest {
 
 		// Instanciem l'objecte Esf de clase "PaginaGestioEconomicaEsfera"
 		Esf5 = new GrupsAsignatsPageObject(driver);
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pagina gesti� econ�mica d'Esfera", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" S'ha instanciat la pagina gesti\u00f3 econ\u00f3mica d'Esfera", Tipus.INFORMACIO);
 
 		// Instanciem l'objecte Esf de clase "DesconnexioEsfera"
 		Esf6 = new DesconnexioPageObject(driver);
@@ -117,7 +117,7 @@ public class SondaEsferaGrupsTest {
 		// Comprovem que els elements imprescindibles s'han carregat. Farem 5 iteraci�ns
 		// amb 1s entre iteraci�.
 		// Si hi ha algun error la prova terminar�
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de la p�gina de login", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Carregant objectes de la p\u00f3gina de login", Tipus.INFORMACIO);
 		resultat =  Esf.ElementoCargado(5, 1000, Esf.OBJECTES_INDISPENSABLES);
 		if (! resultat.equals("OK") ) {
 			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL); //KO
@@ -268,7 +268,7 @@ public class SondaEsferaGrupsTest {
 			Esf5.Espera(15);
 		
 			//PAGINA DESCONNEXIO ESFERA
-			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU)," Carregant objectes del la pagina de desconexi�.", Tipus.INFORMACIO);
+			log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU)," Carregant objectes del la pagina de desconexi\u00f3.", Tipus.INFORMACIO);
 			resultat = Esf6.ElementoCargado(5, 1000, Esf6.OBJECTES_INDISPENSABLES);
 			if (! resultat.equals("OK") ) {
 				log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), resultat, Tipus.ERROR_FATAL);
@@ -352,7 +352,7 @@ public class SondaEsferaGrupsTest {
 		Esf3 	= null;
 		Esf4 	= null;
 		Esf5 	= null;
-		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Tancant connexi� amb el navegador", Tipus.INFORMACIO);
+		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU),	" Tancant connexi\u00f3 amb el navegador", Tipus.INFORMACIO);
 		Esf6.CerrarSeguro();
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Tancament correcte", Tipus.INFORMACIO);
 		log.ImprimeixAmbData(linia.DiguemQuinaLinia(NOM_ARXIU), " Fi del reporting", Tipus.INFORMACIO);
