@@ -85,11 +85,11 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					    //TODO: Machaca los surefire-reports
 					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
 					}
-					stage('Acceptance Test INT') {
-						echo "AcceptanceINT"
-					    sh "mvn verify -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
-					    echo "fi AcceptanceInt"
-					}
+					//stage('Acceptance Test INT') {
+					//	echo "AcceptanceINT"
+					//    sh "mvn verify -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
+					//    echo "fi AcceptanceInt"
+					//}
 				}
 				
 				/*container(name: 'clients') {
