@@ -80,13 +80,13 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					//TODO: Not sure of the real nature of smoke tests
 					stage ('Smoke Test INT') {
 						echo "SmokeINT"
-					 	sh "mv verify -Denv.ENTORNO=PRE -Dgroups=SMOKE"
+					 	sh "mvn verify -Denv.ENTORNO=PRE -Dgroups=SMOKE"
 						echo "fi SmokeInt"
 					    //TODO: Machaca los surefire-reports
 					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
 					}
 					stage('Acceptance Test INT') {
-					     sh "mv verify -Denv.ENTORNO=PRE -Dgroups=SMOKE,ACCEPTANCE" 
+					     sh "mvn verify -Denv.ENTORNO=PRE -Dgroups=SMOKE,ACCEPTANCE" 
 					     echo "fi SmokeAcceptanceInt"
 					}
 				}
