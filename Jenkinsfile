@@ -51,7 +51,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					}
 					finally {
 					    publishHTML(target: [
-						    reportDir            : 'target\surefire-reports',
+						    reportDir            : 'target/surefire-reports',
 						    reportFiles          : 'index.html',
 						    reportName           : 'SeleniumReport',
 						    keepAll              : true,
@@ -62,7 +62,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					
 					post {
 						always {
-						    archive 'target\surefire-reports\*.*'
+						    archive 'target/surefire-reports/*.*'
 					}
 				
 				}
