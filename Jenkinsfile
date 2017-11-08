@@ -39,7 +39,6 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					stage ('Smoke Test PRE') {
 						echo "SmokePRE"
 					 	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
-						archive 'target\\*\\*.html'
 						echo "fi SmokePRE"
 					    //TODO: Machaca los surefire-reports
 					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
@@ -47,19 +46,23 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					stage('Acceptance Test PRE') {
 						echo "AcceptancePRE"
 					    	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
-						archive 'target\\*\\*.html'
 					    	echo "fi AcceptancePRE"
 					}
 					}
 					finally {
 					    publishHTML(target: [
-						    reportDir            : 'target\\surefire-reports',
+						    reportDir            : 'target\surefire-reports',
 						    reportFiles          : 'index.html',
 						    reportName           : 'SeleniumReport',
 						    keepAll              : true,
 						    alwaysLinkToLastBuild: true,
 						    allowMissing         : false
                             			])
+					}
+					
+					post {
+						always {
+						    archive 'target\surefire-reports\*.*'
 					}
 				
 				}
