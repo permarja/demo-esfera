@@ -56,14 +56,16 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					stage ('Smoke Test PRE') {
 						echo "SmokePRE"
 					 	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
+						archive(includes:'target\\surefire-reports\\*.html')
 						echo "fi SmokePRE"
 					    //TODO: Machaca los surefire-reports
 					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
 					}
 					stage('Acceptance Test PRE') {
 						echo "AcceptancePRE"
-					    sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
-					    echo "fi AcceptancePRE"
+					    	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
+						archive(includes:'target\\surefire-reports\\*.html')
+					    	echo "fi AcceptancePRE"
 					}
 					}
 					finally {
