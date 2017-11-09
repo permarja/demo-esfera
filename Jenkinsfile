@@ -10,7 +10,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						}
 						try {
 							stage("Build") {
-						    sh "mvn clean package -Denv.ENTORNO=PRE -Dgroups=SMOKE -Dmaven.test.failure.ignore"
+						    	sh "mvn clean package -Denv.ENTORNO=PRE -Dgroups=SMOKE -Dmaven.test.failure.ignore"
 						    //TODO: Change to publish html
 						    //junit healthScaleFactor: 1.0, testResults: 'target/surefire-reports/TEST*.xml'	
 							}
@@ -19,7 +19,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 							publishHTML(target: [
 						    reportDir            : 'target/surefire-reports',
 						    reportFiles          : 'index.html',
-						    reportName           : 'SeleniumReport',
+						    reportName           : 'SeleniumBuild',
 						    keepAll              : true,
 						    alwaysLinkToLastBuild: true,
 						    allowMissing         : false
@@ -59,7 +59,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 					    publishHTML(target: [
 						    reportDir            : 'target/surefire-reports',
 						    reportFiles          : 'index.html',
-						    reportName           : 'SeleniumReport',
+						    reportName           : 'SeleniumReportSmokePre',
 						    keepAll              : true,
 						    alwaysLinkToLastBuild: true,
 						    allowMissing         : false
@@ -77,7 +77,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						publishHTML(target: [
 						    reportDir            : 'target/surefire-reports',
 						    reportFiles          : 'index.html',
-						    reportName           : 'SeleniumReport',
+						    reportName           : 'SeleniumReportAcceptancePre',
 						    keepAll              : true,
 						    alwaysLinkToLastBuild: true,
 						    allowMissing         : false
