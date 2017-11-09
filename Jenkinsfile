@@ -24,15 +24,12 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						    alwaysLinkToLastBuild: true,
 						    allowMissing         : false
                             			])							
-						}				
-						
-			   
+						}
 						stage ('Anàlisi de codi estàtic') {
 							withSonarQubeEnv("SonarQubeServer") {
 							    sh "mvn sonar:sonar -Dsonar.host.url=$SONAR_HOST_URL" 
 						    }
-						} 
-
+						}
 						//TODO: Moure fora del node, no cal un executor assignat
 						stage("Validació de SonarQube Gatekeeper") {
 							timeout(time: 5, unit: 'MINUTES') { 
@@ -55,7 +52,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						    //TODO: Machaca los surefire-reports
 						    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
 							}
-						}
+					}
 					finally {
 					    publishHTML(target: [
 						    reportDir            : 'target/surefire-reports',
@@ -72,8 +69,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						    sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
 						    echo "fi AcceptancePRE"
 						}
-					}
-					
+					}					
 					finally {
 						publishHTML(target: [
 						    reportDir            : 'target/surefire-reports',
@@ -83,12 +79,7 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						    alwaysLinkToLastBuild: true,
 						    allowMissing         : false
                             			])						
-					}
-					
-						
-					}
-					
-				
+					}											
 				}
+			}
 	     }
-	 }
