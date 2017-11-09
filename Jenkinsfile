@@ -8,12 +8,24 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						stage("Checkout") {
 							checkout scm
 						}
-						
-						stage("Build") {
+						try {
+							stage("Build") {
 						    sh "mvn clean package -Denv.ENTORNO=PRE -Dgroups=SMOKE -Dmaven.test.failure.ignore"
 						    //TODO: Change to publish html
 						    //junit healthScaleFactor: 1.0, testResults: 'target/surefire-reports/TEST*.xml'	
+							}
 						}
+						finally {
+							publishHTML(target: [
+						    reportDir            : 'target/surefire-reports',
+						    reportFiles          : 'index.html',
+						    reportName           : 'SeleniumReport',
+						    keepAll              : true,
+						    alwaysLinkToLastBuild: true,
+						    allowMissing         : false
+                            			])							
+						}				
+						
 			   
 						stage ('Anàlisi de codi estàtic') {
 							withSonarQubeEnv("SonarQubeServer") {
@@ -36,19 +48,13 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 				container(name: 'maven') {
 					//TODO: Not sure of the real nature of smoke tests
 					try{
-					stage ('Smoke Test PRE') {
-						echo "SmokePRE"
-					 	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
-						echo "fi SmokePRE"
-					    //TODO: Machaca los surefire-reports
-					    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
-					}
-					stage('Acceptance Test PRE') {
-						echo "AcceptancePRE"
-					    	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
-					    	echo "fi AcceptancePRE"
-					}
-					}
+						stage ('Smoke Test PRE') {
+							echo "SmokePRE"
+						 	sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=SMOKE"
+							echo "fi SmokePRE"
+						    //TODO: Machaca los surefire-reports
+						    //junit healthScaleFactor: 1.0, testResults: 'target/failsafe-reports/TEST*.xml'	
+						}
 					finally {
 					    publishHTML(target: [
 						    reportDir            : 'target/surefire-reports',
@@ -59,6 +65,28 @@ demoCanigoTemplate(label: 'maven-and-docker-and-kubectl')  {
 						    allowMissing         : false
                             			])
 					}
+					try {
+						stage('Acceptance Test PRE') {
+							echo "AcceptancePRE"
+						    sh "mvn clean install test -Denv.ENTORNO=PRE -Dgroups=ACCEPTANCE" 
+						    echo "fi AcceptancePRE"
+						}
+					}
+					
+					finally {
+						publishHTML(target: [
+						    reportDir            : 'target/surefire-reports',
+						    reportFiles          : 'index.html',
+						    reportName           : 'SeleniumReport',
+						    keepAll              : true,
+						    alwaysLinkToLastBuild: true,
+						    allowMissing         : false
+                            			])						
+					}
+					
+						
+					}
+					
 				
 				}
 	     }
